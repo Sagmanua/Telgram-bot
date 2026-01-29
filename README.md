@@ -1,5 +1,7 @@
 # What bot you can setup
 ## 1. Personal Task Manager
+You can test in @TasK_manager_sagmanua_bot(if you can find it can be delete,if appaer but not answer a command it can be oof you can write to me @Sagmanua to on)
+
 ```
 File: Task_manager_for_1_person.py
 ```
@@ -17,6 +19,8 @@ Key Features:
 * Best For: Personal productivity and private to-do lists.
 
 ## 2. Team Task Manager (Admin & Viewer)
+You can test in @TasK_manager_sagman_bot (if you can find it can be delete,if appaer but not answer a command it can be oof you can write to me @Sagmanua to on)
+
 ```
 File: Task_manager_with_admin.py
 ```
