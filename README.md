@@ -1,3 +1,41 @@
+#What bot you can setup
+1. Personal Task Manager
+```
+File: Task_manager_for_1_person.py
+```
+
+Designed for individual use. Every user who starts the bot gets their own private, isolated database of tasks.
+
+Key Features:
+
+* Private Tasks: Your tasks are linked to your unique Telegram ID; no one else can see them.
+
+* Smart Reminders: A background thread checks every hour and sends you a message if a task is due the next day.
+
+* Interactive List: Uses inline buttons to mark tasks as "Done" directly from the message.
+
+* Best For: Personal productivity and private to-do lists.
+
+2. Team Task Manager (Admin & Viewer)
+```
+File: Task_manager_with_admin.py
+```
+
+Designed for teams or groups. It introduces a permission system where only specific users can manage the list.
+
+Key Features:
+
+* Admin Controls: Only users listed in the ADMINS set can add, delete, or complete tasks.
+
+* Public View: Regular users can use /list to see the current tasks but cannot modify them.
+
+* Centralized Notifications: Reminders for upcoming tasks are sent specifically to the administrators.
+
+* Setup: You must add your Telegram ID to the ADMINS = {1083670850} variable in the script.
+
+* Best For: Work groups, project management, or shared household chores.
+
+
 # Telegram Task Manager Bot Setup
 
 This guide will help you set up your Telegram Task Manager Bot using Python.  
