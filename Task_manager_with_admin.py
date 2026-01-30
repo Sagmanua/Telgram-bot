@@ -50,6 +50,12 @@ def add_user(user_id):
             (user_id,)
         )
 
+def get_all_users():
+    with sqlite3.connect(DATABASE) as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT user_id FROM users")
+        return [row[0] for row in cur.fetchall()]
+
 
 def add_task(user_id, description, due_date):
     with sqlite3.connect(DATABASE) as conn:
@@ -199,9 +205,17 @@ def delete_task_command(message):
 def send_reminders():
     while True:
         tasks = get_upcoming_tasks()
-        for (description,) in tasks:
-            for admin in ADMINS:
-                bot.send_message(admin, f"⏰ Reminder: '{description}' is due tomorrow!")
+        all_users = get_all_users()
+        
+        if tasks and all_users:
+            for (description,) in tasks:
+                for user_id in all_users:
+                    try:
+                        bot.send_message(user_id, f"⏰ Reminder: '{description}' is due tomorrow!")
+                    except Exception as e:
+                        print(f"Could not send message to {user_id}: {e}")
+        
+        # Wait for 1 hour (3600 seconds) before checking again
         time.sleep(3600)
 
 
